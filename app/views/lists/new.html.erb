@@ -1,0 +1,10 @@
+<div class="container">
+<h1>Create you new list!</h1>
+
+<%= simple_form_for @list do |f| %>
+  <%= f.input :name %>
+  <%= f.submit class:"btn btn-outline-success" %>
+<% end %>
+
+<%= link_to '<i class="fa-solid fa-backward" style="color: grey;"></i>'.html_safe, lists_path %>
+</div>

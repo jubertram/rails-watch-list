@@ -1,0 +1,11 @@
+<div class="container">
+<h1>Welcome to my super movie app ! </h1>
+
+<ul class="list-unstyled">
+<% @lists.each do |list| %>
+<li><%=link_to list.name, list_path(list) %></li>
+<% end %>
+</ul>
+
+<%= link_to "Create a new list", new_list_path, class:"btn btn-outline-success btn-lg"%>
+</div>

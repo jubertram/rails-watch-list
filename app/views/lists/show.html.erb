@@ -1,0 +1,15 @@
+<div class="container">
+<h1 style="text-align: center;"><%= @list.name %></h1>
+
+<ul>
+  <% @list.bookmarks.each do |bookmark| %>
+    <li><%= bookmark.movie.title %></li>
+  <% end %>
+</ul>
+
+<h2>Add a new bookmark to the <%= @list.name %> list</h2>
+<%= render "bookmark_form", bookmark: @bookmark %>
+
+<%= link_to '<i class="fa-solid fa-backward" style="color: grey;"></i>'.html_safe, lists_path %>
+
+</div>

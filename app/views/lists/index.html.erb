@@ -1,11 +1,25 @@
-<div class="container">
-<h1>Welcome to my super movie app ! </h1>
 
-<ul class="list-unstyled">
-<% @lists.each do |list| %>
-<li><%=link_to list.name, list_path(list) %></li>
-<% end %>
-</ul>
-
-<%= link_to "Create a new list", new_list_path, class:"btn btn-outline-success btn-lg"%>
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.lambesc.fr/fileadmin/user_upload/cinema.jpg)">
+  Save any kind of movies!
 </div>
+<div class="container">
+
+  <div class="d-flex justify-content-between mt-5">
+  <h2>My lists</h2>
+  <%= link_to "Create a new list", new_list_path, class:"btn btn-outline-success btn-lg"%>
+  </div>
+
+  <div class="cards">
+    <% @lists.each do |list| %>
+      <%= link_to list_path(list) do %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.adorama.com/alc/wp-content/uploads/2018/03/shutterstock_226081837.jpg)">
+          <%= list.name %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+
+
+<div class="cards">

@@ -3,13 +3,14 @@
 
 <ul>
   <% @list.bookmarks.each do |bookmark| %>
-    <li><%= bookmark.movie.title %></li>
+    <li><%= bookmark.movie.title %>
+        <%= link_to '<i class="fa-sharp fa-solid fa-trash"></i>'.html_safe, bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+    </li>
   <% end %>
 </ul>
 
 <h2>Add a new bookmark to the <%= @list.name %> list</h2>
-<%= render "bookmark_form", bookmark: @bookmark %>
+<%= render "bookmark_form", bookmark: @bookmark, list: @list %>
 
 <%= link_to '<i class="fa-solid fa-backward" style="color: grey;"></i>'.html_safe, lists_path %>
-
 </div>
